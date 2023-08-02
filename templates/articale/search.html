@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ol>
+    {% for obj in qs %}
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    {% if  obj.name is not None %}
+        <li>
+            <p>{{ obj.name }}</p>
+            <a href="{{ obj.get_absolute_url }}">{{ obj.name }}</a>
+        </li>
+    {% endif %}
+    {% endfor %}
+</ol>
+    
+{% endblock content %}

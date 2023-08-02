@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+{% block content %} 
+{% if not create %}
+    <form action="." method="post">
+        {% csrf_token %} 
+        {{form.as_p}}
+        <button type="submit">Created</button>
+    </form>
+{% else %}
+        <p>object created</p>
+        <a href="{% url 'articale-detail' slug=obj.slug %}">{{obj.title}}--{{obj.content}}</a>
+{% endif %} 
+{% endblock content %}
